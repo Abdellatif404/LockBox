@@ -1,0 +1,74 @@
+<div class="flex flex-column sm:flex-row flex-wrap items-center justify-between pb-4">
+    <div class="flex items-center">
+        <button id="dropdownRadioButton" data-dropdown-toggle="dropdownRadio"
+                class="inline-flex items-center text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 font-medium rounded-lg text-sm px-2 py-2"
+                type="button">
+            <img src="static/icons/time.svg"
+                 alt=""
+                 class="w-4 h-4 text-gray-500 mr-1">
+            Last day
+            <img src="static/icons/down.svg"
+                 alt=""
+                 class="w-4 h-4 text-gray-500 ml-1">
+        </button>
+        <div id="dropdownRadio"
+             class="z-10 hidden w-48 bg-white divide-y divide-gray-100 rounded-lg shadow-sm"
+             data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="top"
+             style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate3d(522.5px, 3847.5px, 0px);">
+            <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
+                aria-labelledby="dropdownRadioButton">
+                <li>
+                    <div class="flex items-center p-2 rounded-sm hover:bg-gray-100">
+                        <input id="filter-radio-example-1" type="radio" value=""
+                               name="filter-radio"
+                               class="w-4 h-4 mr-1 text-blue-600 bg-gray-100 border-gray-300">
+                        <label for="filter-radio-example-1"
+                               class="w-full ms-2 text-sm font-medium text-gray-900 rounded-sm">Last
+                            day</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center p-2 rounded-sm hover:bg-gray-100">
+                        <input checked="" id="filter-radio-example-2" type="radio" value=""
+                               name="filter-radio"
+                               class="w-4 h-4 mr-1 text-blue-600 bg-gray-100 border-gray-300">
+                        <label for="filter-radio-example-2"
+                               class="w-full ms-2 text-sm font-medium text-gray-900 rounded-sm">Last
+                            7 days</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center p-2 rounded-sm hover:bg-gray-100">
+                        <input id="filter-radio-example-4" type="radio" value=""
+                               name="filter-radio"
+                               class="w-4 h-4 mr-1 text-blue-600 bg-gray-100 border-gray-300">
+                        <label for="filter-radio-example-4"
+                               class="w-full ms-2 text-sm font-medium text-gray-900 rounded-sm">Last
+                            month</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex items-center p-2 rounded-sm hover:bg-gray-100">
+                        <input id="filter-radio-example-5" type="radio" value=""
+                               name="filter-radio"
+                               class="w-4 h-4 mr-1 text-blue-600 bg-gray-100 border-gray-300">
+                        <label for="filter-radio-example-5"
+                               class="w-full ms-2 text-sm font-medium text-gray-900 rounded-sm">Last
+                            year</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <label for="table-search" class="sr-only">Search</label>
+    <div class="relative">
+        <div class="absolute inset-y-0 left-1 rtl:inset-r-0 rtl:right-0 flex items-center ps-3 pointer-events-none">
+            <img src="static/icons/search.svg"
+                 alt=""
+                 class="w-5 h-5 text-gray-500 mx-1">
+        </div>
+        <input type="text" id="table-search"
+               class="block py-2 px-6 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg w-full md:w-80 lg:w-96 bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+               placeholder="  Search for items">
+    </div>
+</div>

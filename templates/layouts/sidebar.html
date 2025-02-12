@@ -1,0 +1,66 @@
+<aside id="logo-sidebar"
+       class="fixed top-2 left-0 z-40 w-64 h-screen pt-20 transition-transform transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0"
+       aria-label="Sidebar">
+    <div class="h-full px-3 pb-4 overflow-y-auto flex flex-col justify-between h-full bg-white">
+        <ul class="space-y-2 font-medium">
+            {% with
+                a_blue_style = 'text-white shadow-md bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400',
+                a_default_style = 'text-gray-900 hover:bg-gray-100',
+                img_blue_style = 'group-hover:bg-blue-400 bg-blue-500',
+                img_default_style = 'group-hover:bg-white bg-white-600'
+            %}
+            <li>
+                <a href="{{ url_for('index') }}"
+                   class="flex items-center p-2 rounded-lg group {% if active_page=='home' %} {{a_blue_style}} {% else %} {{a_default_style}} {% endif %}">
+
+                    <img src="static/icons/home{% if active_page=='home' %}-white{% endif %}.svg"
+                         alt="Home icon"
+                         class="w-8 h-8 shadow-md p-1.5 rounded-lg mr-3 {% if active_page=='home' %} {{img_blue_style}} {% else %} {{img_default_style}} {% endif %}">
+                    <span class="ms-3">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('passwords') }}"
+                   class="flex items-center p-2 rounded-lg group {% if active_page=='passwords' %} {{a_blue_style}} {% else %} {{a_default_style}} {% endif %}">
+
+                    <img src="static/icons/database{% if active_page=='passwords' %}-white{% endif %}.svg"
+                         alt="Password icon"
+                         class="w-8 h-8 shadow-md p-1.5 rounded-lg mr-3 p-1.5 {% if active_page=='passwords' %} {{img_blue_style}} {% else %} {{img_default_style}} {% endif %}">
+                    <span class="ms-3">Passwords</span>
+                </a>
+            </li>
+            {% endwith %}
+        </ul>
+        <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+            <div class="flex justify-end px-4 pt-4">
+            </div>
+            <div class="flex flex-col items-center pb-5">
+                <img class="w-24 h-24 mb-3 rounded-full shadow-lg object-fill"
+                     src="static/images/profile.jpg"
+                     alt="Cat image"/>
+                <h5 class="mb-1 text-xl font-medium text-gray-900">Abdellatif</h5>
+                <span class="text-sm text-gray-500">Passionate Developer</span>
+                <div class="flex mt-4 md:mt-4">
+                    <a href="https://discordapp.com/users/651684142269988876"
+                       class="inline-flex items-center justify-center text-blue-500 hover:text-blue-800 rounded-lg p-2.5 hover:bg-gray-100">
+                        <img src="https://img.icons8.com/?size=100&id=M8LpLbrAw72G&format=png&color=000000"
+                             alt="Discord icon" class="w-6 h-6"/>
+                        <span class="sr-only">Discord</span>
+                    </a>
+                    <a href="https://github.com/Abdellatif404"
+                       class="inline-flex items-center justify-center text-blue-500 hover:text-blue-800 rounded-lg p-2.5 hover:bg-gray-100">
+                        <img src="https://img.icons8.com/?size=100&id=zuHqpgzrusU5&format=png&color=000000"
+                             alt="Github icon" class="w-6 h-6"/>
+                        <span class="sr-only">Github</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/abdellatif-el-bouziady"
+                       class="inline-flex items-center justify-center text-blue-500 hover:text-blue-800 rounded-lg p-2.5 hover:bg-gray-100">
+                        <img src="https://img.icons8.com/?size=100&id=BRElTmOLC6Bh&format=png&color=000000"
+                             alt="LinkedIn icon" class="w-6 h-6"/>
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>

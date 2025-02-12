@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "layouts/head.html" %}
+    <style>
+        ::-ms-reveal {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    {% include "layouts/header.html" %}
+    {% include "layouts/sidebar.html" %}
+    <div class="p-4 sm:ml-64 h-screen overflow-y-auto">
+        <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg mt-14">
+            <div class="grid grid-cols-5 gap-4">
+                <div class="flex items-start justify-center col-span-5 lg:col-span-2">
+                    <div class="relative overflow-x-auto shadow-md sm:rounded-lg p-3 h-full w-full pb-10">
+                        {% include "layouts/password_form.html" %}
+                    </div>
+                </div>
+                <div class="flex items-start justify-center col-span-5 lg:col-span-3">
+                    <div class="relative overflow-x-auto overflow-y-auto  w-full h-screen shadow-md sm:rounded-lg p-3">
+                        {% include "layouts/table_scrapper.html" %}
+                        {% include "layouts/mini_table.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButton = document.getElementById('toggleSidebar');
+            const sidebar = document.getElementById('logo-sidebar');
+
+            toggleButton.addEventListener('click', function() {
+                sidebar.classList.toggle('-translate-x-full');
+                sidebar.classList.toggle('translate-x-0');
+            });
+        });
+    </script>
+    <script>
+        window.addEventListener('load', function() {
+            const clipboard = FlowbiteInstances.getInstance('CopyClipboard', 'password');
+            const $defaultMessage = document.getElementById('default-message');
+            const $successMessage = document.getElementById('success-message');
+
+            clipboard.updateOnCopyCallback((clipboard) => {
+                $defaultMessage.classList.add('hidden');
+                $successMessage.classList.remove('hidden');
+
+                setTimeout(() => {
+                    $defaultMessage.classList.remove('hidden');
+                    $successMessage.classList.add('hidden');
+                }, 2000);
+            });
+        })
+    </script>
+</body>
+</html>
