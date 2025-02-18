@@ -10,7 +10,7 @@
                 img_default_style = 'group-hover:bg-white bg-white-600'
             %}
             <li>
-                <a href="{{ url_for('index') }}"
+                <a href="{{ url_for('home') }}"
                    class="flex items-center p-2 rounded-lg group {% if active_page=='home' %} {{a_blue_style}} {% else %} {{a_default_style}} {% endif %}">
 
                     <img src="static/icons/home{% if active_page=='home' %}-white{% endif %}.svg"

@@ -1,0 +1,7 @@
+<div class="flex items-center justify-between p-4 mb-4 text-red-700 rounded-bl-lg rounded-br-lg bg-red-50">
+    <ul class="list-inside ms-3 ml-2 text-xs font-medium">
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+</div>
